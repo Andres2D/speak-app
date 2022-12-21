@@ -1,0 +1,37 @@
+:root {
+  --bg-header: #020016;
+}
+
+header {
+  margin: -10px -10px 0px -10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--bg-header);
+}
+
+.logo {
+  margin-top: 25px;
+  margin-bottom: 30px;
+  width: 250px;
+  height: 130px;
+  border: 2px solid white;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.menu {
+  display: flex;
+  gap: 100px;
+}
+
+.voices {
+  color: white;
+  font-size: 25px;
+  text-decoration: none;
+}
+
+.voices:hover {  
+  cursor: pointer;
+  text-decoration: underline;
+}

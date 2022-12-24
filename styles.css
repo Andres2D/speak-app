@@ -34,3 +34,56 @@
   cursor: pointer;
   text-decoration: underline;
 }
+
+.container {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#inputText {
+  width: 600px;
+  height: 500px;
+}
+
+.containerLeft {
+  display: flex;
+  flex-direction: column;
+}
+
+.buttons {
+  margin-top: 15px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  gap: 20px;
+}
+
+.voicesButton, .speak {
+  width: 100px;
+  border: 2px solid var(--bg-header);
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.speak {
+  background-color: #C2F6AE;
+}
+
+.voicesButton:hover, .speak:hover {
+  cursor: pointer;
+  background-color: #CFCFD3;
+}
+
+.containerRight {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+
+.history {
+  list-style-type: none;
+  margin: 0 auto;
+  padding: 0;
+}

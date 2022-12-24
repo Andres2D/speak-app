@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
   <link rel="icon" href="../images/favicon/favicon.ico">
   <title>Hablalo App</title>
 </head>
+
 <body>
   <header class="header">
     <img class="logo" src="../images/logo/HabladoApp-Gray.png" alt="TtA_Converter">
@@ -16,7 +18,26 @@
       <a class="voices" href="#">Voices</a>
     </div>
   </header>
-  <h1>Insert ur work here.</h1>
+  <section class="container">
+    <div class="contarinerLeft">
+      <textarea id="inputText" placeholder="Type your text..."></textarea>
+      <div class="buttons">
+        <button class="speak" id="play">Speak</button>
+        <button class="voicesButton" id="man">Man</button>
+        <button class="voicesButton" id="woman">Woman</button>
+      </div>
+    </div>
+    <div class="containerRight">
+      <h1>History</h1>
+      <ul class="history">
+        <li>Primero</li>
+        <li>Segundo</li>
+        <li>Tercero</li>
+        <li>Cuarto</li>
+      </ul>
+    </div>
+  </section>
   <script src="script.js"></script>
 </body>
+
 </html>

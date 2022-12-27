@@ -54,19 +54,16 @@
   gap: 20px;
 }
 
-.voicesButton, .speak {
+.speak {
   width: 100px;
   border: 2px solid var(--bg-header);
   border-radius: 10px;
   padding: 10px;
   font-size: 20px;
-}
-
-.speak {
   background-color: #C2F6AE;
 }
 
-.voicesButton:hover, .speak:hover {
+.speak:hover {
   cursor: pointer;
   background-color: #CFCFD3;
 }
@@ -85,4 +82,23 @@
 
 .textArea {
   font-size: 20px;
+}
+
+.gender-select {
+  width: 80px;
+  text-align: center;
+  font-size: 30px;
+  border-radius: 8px;
+}
+
+.icon-gender {
+  font-size: 20px;
+}
+
+.mal {
+  color: blue;
+}
+
+.fem {
+  color: palevioletred;
 }

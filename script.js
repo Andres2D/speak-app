@@ -446,17 +446,16 @@ const availableVoices = [
 // Flags
 const selectFlag = document.getElementById('flags');
 const onlyFlagsUnique = new Set(availableVoices.map(f => f.flag));
-let I = 0;
+let countFlags = 0;
 
 onlyFlagsUnique.forEach(flag => {
-  I++;
+  countFlags++;
   const optionElement = document.createElement("li");
   optionElement.setAttribute("class", "flagList");
-  optionElement.setAttribute("onclick", "handleClick("+I+")");
+  optionElement.setAttribute("onclick", `handleClick("${countFlags}")`);
   const imgElment = document.createElement("img");
   imgElment.setAttribute("class", "imgList");
   imgElment.src = flag;
-  // imgElment.alt = flag.accent;
   optionElement.appendChild(imgElment);  
   selectFlag.appendChild(optionElement);
 });
@@ -466,15 +465,15 @@ const handleClick = (fi) => { // fi = Flag ID
 };
 
 // Scroll Flags
-const goUp = document.getElementById('up');
-const goDown = document.getElementById('down');
+const arrowTop = document.getElementById('top');
+const arrowDown = document.getElementById('down');
 const scrollList = document.getElementById('divFlags');
 
-goUp.addEventListener('click', () => {
+arrowTop.addEventListener('click', () => {
   scrollList.scrollTop -= 410
 })
 
-goDown.addEventListener('click', () => {
+arrowDown.addEventListener('click', () => {
   scrollList.scrollTop += 410
 })
 

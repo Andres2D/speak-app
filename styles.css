@@ -30,7 +30,7 @@
   text-decoration: none;
 }
 
-.voices:hover {  
+.voices:hover {
   cursor: pointer;
   text-decoration: underline;
 }
@@ -39,9 +39,63 @@
   margin-top: 40px;
   display: flex;
   justify-content: space-evenly;
+  flex-flow: row wrap;
 }
 
-.containerLeft {
+.containerFlags {
+  font-size: 20px;
+  width: 150px;
+  height: 485px;
+  border: 2px solid black;
+  border-radius: 30px;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+.containerFlags::-webkit-scrollbar {
+  display: none;
+}
+ 
+.arrow {
+  margin-left: 45%;
+  width: 20px;
+  height: 20px;
+  border-top: 5px solid #333;
+  border-right: 5px solid #333;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.top {  
+  transform: rotate(315deg);
+}
+
+.down {  
+  transform: rotate(135deg);
+}
+
+.containerList {
+  margin: 5px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 0;
+}
+
+.flagList {
+  width: 80px;
+  height: 50px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.imgList {
+  width: 80px;
+  height: 50px;
+}
+
+.containerInputs {
   display: flex;
   flex-direction: column;
 }
@@ -68,7 +122,7 @@
   background-color: #CFCFD3;
 }
 
-.containerRight {
+.containerHistory {
   display: flex;
   flex-flow: column wrap;
   align-items: center;
@@ -95,14 +149,10 @@
   font-size: 20px;
 }
 
-.mal {
+.maleOption {
   color: blue;
 }
 
-.fem {
+.femaleOption {
   color: palevioletred;
-}
-
-.flag {
-  font-size: 40px;
 }

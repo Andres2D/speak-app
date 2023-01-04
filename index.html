@@ -19,19 +19,25 @@
     </div>
   </header>
   <section class="container">
-    <div class="contarinerLeft">
+    <div class="flagsSelector">
+      <div class="arrow top" id="top"></div>
+      <div class="containerFlags" id="divFlags">
+        <ul class="containerList" id="flags">        
+        </ul>
+      </div>      
+      <div class="arrow down" id="down"></div>
+    </div>
+    <div class="containerInputs">
       <textarea class="textArea" id="inputText" rows="20" cols="60" placeholder="Type your text..."></textarea>
       <div class="buttons">
-        <select id="flags" class="flag">
-        </select>
         <select class="fa gender-select" id="gender">
-          <option class="fa icon-gender mal" value="Male">👨‍🦱</option>
-          <option class="fa icon-gender fem" value="Female">👩</option>
+          <option class="maleOption" value="male">👨‍🦱</option>
+          <option class="femaleOption" value="female">👩</option>
         </select>
         <button class="speak" id="play">Speak</button>
       </div>
     </div>
-    <div class="containerRight">
+    <div class="containerHistory">
       <h1>History</h1>
       <ul class="history">
         <li>Primero</li>

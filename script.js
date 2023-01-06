@@ -460,10 +460,6 @@ onlyFlagsUnique.forEach(flag => {
   selectFlag.appendChild(optionElement);
 });
 
-const handleClick = (fi) => { // fi = Flag ID
-  console.log(fi);
-};
-
 // Scroll Flags
 const arrowTop = document.getElementById('top');
 const arrowDown = document.getElementById('down');
@@ -477,15 +473,28 @@ arrowDown.addEventListener('click', () => {
   scrollList.scrollTop += 410
 })
 
+// Select Flag
+let idSelectedFlag = 1;
+
+const handleClick = (fi) => { // fi = Flag ID
+  idSelectedFlag = fi;
+
+  if (availableVoices.filter(fl => fl.id === Number(idSelectedFlag)).filter(fl => fl.gender === 'Male') && availableVoices.filter(fl => fl.id === Number(idSelectedFlag)).filter(fl => fl.gender === 'Female')) {
+    console.log('Tiene los 2?');
+  } else {
+    console.log('IOKC BRO');
+  }
+
+};
+
 // Play
 const genderList = document.getElementById('gender');
 
 playButton.addEventListener('click', () => {
   const textArea = document.getElementById('inputText');
-  const selectedFlag = selectFlag.value;
   const selectedGender = genderList.value;
 
-  const option = availableVoices.filter(fl => fl.flag === selectedFlag).filter(fl => fl.gender === selectedGender);
+  const option = availableVoices.filter(fl => fl.id === Number(idSelectedFlag)).filter(fl => fl.gender === selectedGender);
 
   responsiveVoice.speak(textArea.value, option[0].apiName);
 });

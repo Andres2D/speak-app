@@ -479,10 +479,10 @@ let idSelectedFlag = 1;
 const handleClick = (fi) => { // fi = Flag ID
   idSelectedFlag = fi;
 
-  if (availableVoices.filter(fl => fl.id === Number(idSelectedFlag)).filter(fl => fl.gender === 'Male') && availableVoices.filter(fl => fl.id === Number(idSelectedFlag)).filter(fl => fl.gender === 'Female')) {
-    console.log('Tiene los 2?');
+  if (idSelectedFlag == 4 || idSelectedFlag == 7 || idSelectedFlag == 11 || idSelectedFlag == 12 || idSelectedFlag == 15 || idSelectedFlag == 16 || idSelectedFlag == 17 || idSelectedFlag == 20 || idSelectedFlag == 22 || idSelectedFlag == 27 || idSelectedFlag == 31 || idSelectedFlag == 32 || idSelectedFlag == 33 || idSelectedFlag == 34 || idSelectedFlag == 38) {
+    document.getElementById('gender').setAttribute("disabled", "");
   } else {
-    console.log('IOKC BRO');
+    document.getElementById('gender').removeAttribute("disabled", "");
   }
 
 };

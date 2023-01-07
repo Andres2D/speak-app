@@ -2,6 +2,10 @@
   --bg-header: #020016;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 .header {
   margin: -10px -10px 0px -10px;
   display: flex;
@@ -40,6 +44,10 @@
   display: flex;
   justify-content: space-evenly;
   flex-flow: row wrap;
+}
+
+.flagsSelector {
+  padding: 20px;
 }
 
 .containerFlags {
@@ -98,6 +106,7 @@
 .containerInputs {
   display: flex;
   flex-direction: column;
+  padding: 20px;
 }
 
 .buttons {
@@ -126,6 +135,7 @@
   display: flex;
   flex-flow: column wrap;
   align-items: center;
+  padding: 20px;
 }
 
 .history {

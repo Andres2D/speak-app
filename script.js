@@ -456,7 +456,7 @@ onlyFlagsUnique.forEach(flag => {
   const imgElment = document.createElement("img");
   imgElment.setAttribute("class", "imgList");
   imgElment.src = flag;
-  optionElement.appendChild(imgElment);  
+  optionElement.appendChild(imgElment);
   selectFlag.appendChild(optionElement);
 });
 
@@ -479,7 +479,9 @@ let idSelectedFlag = 1;
 const handleClick = (fi) => { // fi = Flag ID
   idSelectedFlag = fi;
 
-  if (idSelectedFlag == 4 || idSelectedFlag == 7 || idSelectedFlag == 11 || idSelectedFlag == 12 || idSelectedFlag == 15 || idSelectedFlag == 16 || idSelectedFlag == 17 || idSelectedFlag == 20 || idSelectedFlag == 22 || idSelectedFlag == 27 || idSelectedFlag == 31 || idSelectedFlag == 32 || idSelectedFlag == 33 || idSelectedFlag == 34 || idSelectedFlag == 38) {
+  const countryOptions = availableVoices.filter(fl => fl.id === Number(idSelectedFlag));
+  
+  if (countryOptions.length < 2) {
     document.getElementById('gender').setAttribute("disabled", "");
   } else {
     document.getElementById('gender').removeAttribute("disabled", "");

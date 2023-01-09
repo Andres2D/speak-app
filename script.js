@@ -456,7 +456,7 @@ onlyFlagsUnique.forEach(flag => {
   const imgElment = document.createElement("img");
   imgElment.setAttribute("class", "imgList");
   imgElment.src = flag;
-  optionElement.appendChild(imgElment);  
+  optionElement.appendChild(imgElment);
   selectFlag.appendChild(optionElement);
 });
 
@@ -479,10 +479,12 @@ let idSelectedFlag = 1;
 const handleClick = (fi) => { // fi = Flag ID
   idSelectedFlag = fi;
 
-  if (availableVoices.filter(fl => fl.id === Number(idSelectedFlag)).filter(fl => fl.gender === 'Male') && availableVoices.filter(fl => fl.id === Number(idSelectedFlag)).filter(fl => fl.gender === 'Female')) {
-    console.log('Tiene los 2?');
+  const countryOptions = availableVoices.filter(fl => fl.id === Number(idSelectedFlag));
+
+  if (countryOptions.length < 2) {
+    document.getElementById('gender').setAttribute("disabled", "");
   } else {
-    console.log('IOKC BRO');
+    document.getElementById('gender').removeAttribute("disabled", "");
   }
 
 };
@@ -494,9 +496,16 @@ playButton.addEventListener('click', () => {
   const textArea = document.getElementById('inputText');
   const selectedGender = genderList.value;
 
-  const option = availableVoices.filter(fl => fl.id === Number(idSelectedFlag)).filter(fl => fl.gender === selectedGender);
+  const definedGenre = availableVoices.filter(fl => fl.id === Number(idSelectedFlag));
+  
+  if (definedGenre.length < 2) {
+    responsiveVoice.speak(textArea.value, definedGenre[0].apiName);
+  } else {
+    const option = availableVoices.filter(fl => fl.id === Number(idSelectedFlag)).filter(fl => fl.gender === selectedGender);
+    
+    responsiveVoice.speak(textArea.value, option[0].apiName);
+  }
 
-  responsiveVoice.speak(textArea.value, option[0].apiName);
 });
 
 const selectFlags = document.getElementById('flags');

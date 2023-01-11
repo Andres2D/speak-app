@@ -63,7 +63,7 @@ body {
 .containerFlags::-webkit-scrollbar {
   display: none;
 }
- 
+
 .arrow {
   margin-left: 45%;
   width: 20px;
@@ -74,11 +74,11 @@ body {
   cursor: pointer;
 }
 
-.top {  
+.top {
   transform: rotate(315deg);
 }
 
-.down {  
+.down {
   transform: rotate(135deg);
 }
 
@@ -92,15 +92,19 @@ body {
 }
 
 .flagList {
-  width: 80px;
-  height: 50px;
+  width: 110px;
+  height: 70px;
   cursor: pointer;
   list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .imgList {
   width: 80px;
   height: 50px;
+  border-radius: 5px;
 }
 
 .containerInputs {
@@ -165,4 +169,11 @@ body {
 
 .femaleOption {
   color: palevioletred;
+}
+
+.selectedEfect {
+  cursor: pointer;
+  border: 2px solid black;
+  border-radius: 15px;
+  background: skyblue;
 }

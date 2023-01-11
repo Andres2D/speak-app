@@ -451,7 +451,7 @@ let countFlags = 0;
 onlyFlagsUnique.forEach(flag => {
   countFlags++;
   const optionElement = document.createElement("li");
-  optionElement.setAttribute("class", "flagList");
+  optionElement.classList.add("flagList");
   optionElement.setAttribute("onclick", `handleClick("${countFlags}")`);
   const imgElment = document.createElement("img");
   imgElment.setAttribute("class", "imgList");
@@ -478,6 +478,12 @@ let idSelectedFlag = 1;
 
 const handleClick = (fi) => { // fi = Flag ID
   idSelectedFlag = fi;
+
+  [...selectFlag.children].forEach(flag => {
+    flag.classList.remove("selectedEfect");
+  })
+
+  selectFlag.children[fi-1].classList.add("selectedEfect");
 
   const countryOptions = availableVoices.filter(fl => fl.id === Number(idSelectedFlag));
 

@@ -442,6 +442,14 @@ const availableVoices = [
     id: 39
   }
 ];
+let historyList = [];
+
+window.addEventListener('load', () => {
+  if('history' in localStorage) {
+    historyList = JSON.parse(localStorage.getItem('history'));
+    renderListItem(historyList);
+  }
+}, false);
 
 // Flags
 const selectFlag = document.getElementById('flags');
@@ -500,18 +508,59 @@ const genderList = document.getElementById('gender');
 
 playButton.addEventListener('click', () => {
   const textArea = document.getElementById('inputText');
-  const selectedGender = genderList.value;
+  playVoice(textArea.value);
+  registerHistory(textArea.value);
+});
 
+const playVoice = (text) => {
+  const selectedGender = genderList.value;
   const definedGenre = availableVoices.filter(fl => fl.id === Number(idSelectedFlag));
   
   if (definedGenre.length < 2) {
-    responsiveVoice.speak(textArea.value, definedGenre[0].apiName);
+    responsiveVoice.speak(text, definedGenre[0].apiName);
   } else {
     const option = availableVoices.filter(fl => fl.id === Number(idSelectedFlag)).filter(fl => fl.gender === selectedGender);
     
-    responsiveVoice.speak(textArea.value, option[0].apiName);
+    responsiveVoice.speak(text, option[0].apiName);
+  }
+}
+
+const registerHistory = (text) => {
+  if(!historyList.includes(text)) {
+    historyList.unshift(text);
+    historyList = historyList.slice(0, 5);
+    renderListItem(historyList);
+    setLocalStorage(historyList);
+  }
+}
+
+const renderListItem = (listItems) => {
+  const listElement = document.getElementById('history');
+
+  while (listElement.firstChild) {
+    listElement.removeChild(listElement.lastChild);
   }
 
-});
+  listItems.forEach(item => {
+    const paragraph = document.createElement('p');
+    paragraph.innerHTML = item;
+
+    const listItem = document.createElement('li');
+    listItem.classList.add('item');
+
+    const buttonElement = document.createElement('button');
+    buttonElement.innerHTML = 'Play';
+    buttonElement.setAttribute("onclick", `playVoice("${item}")`);
+
+    listItem.appendChild(paragraph);
+    listItem.appendChild(buttonElement);
+
+    listElement.appendChild(listItem);
+  })
+}
+
+const setLocalStorage = (listItems) => {
+  localStorage.setItem('history', JSON.stringify(listItems));
+};
 
 const selectFlags = document.getElementById('flags');

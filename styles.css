@@ -193,22 +193,26 @@ body {
 }
 
 @media (max-width: 800px){
-  .containerInputs, .history {
+  .container {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
   }
+
   .flagsSelector{
     rotate: 270deg;
   }
+
   .containerList{
     display: flex;
     gap: 35px;
   }
+
   .imgList{
     rotate: 90deg;
   }
+  
   .selectedEfect{
     width: 90px;
     height: 110px;

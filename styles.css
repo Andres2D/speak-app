@@ -40,6 +40,7 @@ body {
 }
 
 .container {
+  width: 100%;
   margin-top: 40px;
   display: flex;
   justify-content: space-evenly;
@@ -192,29 +193,70 @@ body {
   background: skyblue;
 }
 
-@media (max-width: 800px){
-  .container {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
+@media (max-width: 1260px) {
+  .textArea {
+    width: 500px;
+  }
+}
+
+@media (max-width: 1029px) {
+  .arrow {
+    margin-left: 38%;
   }
 
-  .flagsSelector{
-    rotate: 270deg;
-  }
-
-  .containerList{
-    display: flex;
-    gap: 35px;
-  }
-
-  .imgList{
-    rotate: 90deg;
-  }
-  
-  .selectedEfect{
+  .containerFlags {
     width: 90px;
-    height: 110px;
+  }
+}
+
+@media (max-width: 968px) {
+  .flagsSelector {
+    display: flex;
+    width: 50%;
+  }
+
+  .containerFlags {
+    height: 90px;
+    width: 100%;
+  }
+
+  .containerList {
+    flex-direction: row;
+  }
+
+  .arrow {
+    display: none;
+  }
+}
+
+@media (max-width: 834px) {
+  .containerFlags {
+    width: 100%;
+  }
+
+  .textArea {
+    margin: 0 auto;
+    width: 80%;
+  }
+
+  .flagsSelector {
+    justify-content: center;
+    width: 80%;
+  }
+
+  .history {
+    width: 70%;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .menu {
+    gap: 20px;
+  }
+
+  .logo {
+    height: 60px;
+    width: 87px;
   }
 }
